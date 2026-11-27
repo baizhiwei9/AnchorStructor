@@ -30,6 +30,29 @@ AnchorStructor/              ← 本仓库：只放清单与脚本，不放子�
 python -c "import multi_agent, alert"     # 任意目录都能 import
 ```
 
+## 不用 venv：装进系统 python（crontab 直跑）
+
+如果机器上就是系统 `python3`、`python3 xxx.py` 直跑（crontab 也一样），不用建 venv：
+
+```bash
+./install-system.sh                          # 装进 PATH 里的 python3
+PYTHON=/usr/bin/python3 ./install-system.sh  # 指定解释器
+./install-system.sh --user                   # 没有 root：装到 ~/.local
+```
+
+装一次即可，之后：
+
+```bash
+python3 /任意目录/xxx.py                     # 直接跑，不用 activate
+python3 -c "import alert, calc, charts"      # 任意目录都能 import
+```
+
+crontab 那一行不用改，只要里面的解释器就是装过的这个（写绝对路径最稳）。
+`members.private.toml` 里列了、且目录存在于本仓根下的私有成员会一起装。
+
+> 子库代码里已经没有任何 `sys.path` / `PYTHONPATH` 自举；
+> 解释器里没装就会 `ModuleNotFoundError`——报这个错就说明没跑过这一步。
+
 ## 公开成员
 
 | 仓库 | role | import 名 |
