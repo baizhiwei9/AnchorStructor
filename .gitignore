@@ -1,0 +1,12 @@
+# 根目录下的子目录都是外部仓库（各自独立 git），一律不入库；
+# 只放行本仓库自己的 templates/（公开模板）
+/*/
+!/templates/
+
+# 私有成员清单 / 私有模板：名字、URL、安装路径只留本地
+templates.private/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
