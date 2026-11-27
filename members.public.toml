@@ -1,0 +1,47 @@
+# AnchorStructor 公开成员（随本仓库提交，可公开）
+# 私有成员不在此文件：见本地 members.private.toml（已在 .gitignore 中排除）
+
+[project]
+name = "AnchorStructor"
+homepage = "https://github.com/baizhiwei9/AnchorStructor"
+
+[members.multi-agent]
+repo = "baizhiwei9/multi-agent"
+visibility = "public"
+role = "library"
+distribution = "multi-agent-hub"
+import = ["multi_agent"]
+state = "verified"
+
+[members.options_utility]
+repo = "baizhiwei9/options_utility"
+visibility = "public"
+role = "library"
+distribution = "anchorstructor-options-utility"
+import = ["alert", "calc", "calc.cn", "calc.us", "cli", "option_pcr",
+          "deriv_src", "deriv_v2", "hub_option_api", "sync_pull",
+          "topbottom_src", "topbottom_v2"]
+state = "verified"
+
+[members.techAnly-summary]
+repo = "baizhiwei9/techAnly-summary"
+visibility = "public"
+role = "library"
+distribution = "anchorstructor-techanly-summary"
+import = ["charts", "topology", "chanlun.multiscale.chanlun_backtest"]
+state = "verified"
+note = "chanlun 顶层无 __init__.py，打包需 namespaces=true"
+
+[members.stock-dashboard]
+repo = "baizhiwei9/stock-dashboard"
+visibility = "public"
+role = "app"
+import = ["（部署工程，自带 setup.py，按需安装）"]
+state = "existing"
+
+[members.anchor-lite]
+repo = "baizhiwei9/anchor-lite"
+visibility = "public"
+role = "site"
+import = ["（HTML 站点，不参与 Python 打包）"]
+state = "registered"

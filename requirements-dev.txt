@@ -1,0 +1,5 @@
+# 公开成员的可编辑安装清单（私有库见本地 requirements.private.txt，不入库）
+-e ./multi-agent
+-e ./options_utility
+-e ./techAnly-summary
+# stock-dashboard 是部署工程，按需装；anchor-lite 不参与打包

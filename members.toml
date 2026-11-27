@@ -1,0 +1,17 @@
+# AnchorStructor 清单索引
+# 公开成员 → members.public.toml（随仓库提交）
+# 私有成员 → members.private.toml（本地文件，已在 .gitignore 中排除，不入库）
+# 仓库名一律不改；归属靠「清单 + 每个子库 pyproject.toml 的 [project.urls]」表达。
+
+[project]
+name = "AnchorStructor"
+homepage = "https://github.com/baizhiwei9/AnchorStructor"
+
+[layout]
+public = "members.public.toml"
+private = "members.private.toml"                 # 不入库
+requirements_public = "requirements-dev.txt"
+requirements_private = "requirements.private.txt" # 不入库
+bootstrap_public = "bootstrap.sh"
+bootstrap_private = "bootstrap.private.sh"        # 不入库
+templates = "templates/"
